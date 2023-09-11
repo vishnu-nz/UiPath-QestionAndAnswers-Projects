@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Check App State 'Dashboard'",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "I2sEJYyUkEaYf_GFYDscsQ",
+  "Reference": "c5pCUmpFNkeur-5Ffk__sA/I2sEJYyUkEaYf_GFYDscsQ",
+  "ParentRef": "c5pCUmpFNkeur-5Ffk__sA/d09iR8q9rkS8ICHsmAAelA",
+  "Created": "2023-09-08T07:10:35.2512711Z",
+  "Updated": "2023-09-08T07:10:35.2512711Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=23.6.2.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=23.8.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="XqsTB5KTZ0uQdupYt7gr3g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://acme-test.uipath.com/work-items/update/95087897" CvType="InputBox" DesignTimeRectangle="54, 387, 341, 54" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'TEXTAREA newComment'" FullSelectorArgument="&lt;webctrl id='newComment' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl id='newComment' tag='TEXTAREA' type='text' class='form-control' aaname='' /&gt;" Guid="598c2686-b6ee-4fc1-b6ae-3fdac50b1eaf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVkAAAA6CAYAAAAa5SqbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHJSURBVHhe7djBiuJAGIXReVqfVvIEWbpQEBEhoBJTzR1M0KGnCY3/7hy4Cyu1/pD60wAoI7IAhd4iOwxD6/u+dV3XttutmZmtXLqZfqajr5bI5kMu7Xa7djwe2+l0MjOzlUs308909DW0S2RT4Fy4XC7tdru1x+NhZmYrl26mn+loejpbIpv6ns/nNo5jm6bpeQrAGulm+pmOpqezJbJ5U7herwIL8EvpZzqans7eIpu/vAD8XjoqsgBFRBagkMgCFBJZgEIiC1BIZAEKiSxAIZEFKCSyAIVEFqCQyAIUElmAQiILUEhkAQqJLEAhkQUoJLIAhUQWoJDIAhQSWYBCIgtQSGQBCoksQCGRBSgksgCFRBagkMgCFBJZgEIiC1BIZAEKiSxAIZEFKCSyAIVEFqCQyAIUElmAQiILUEhkAQqJLEAhkQUostlsRBagQgIbIgvwYXNgQ2QBPug1sCGyAB/yb2B/fJPtuq7d7/fnLwB+8l1gIx1NT2dLZPu+b/v9vk3T9DwB4Dv/C2z6mY6mp7MlssMw/K3v4XBo4zg+TwFYI91MP9PR9HS2RDbyIQXOpbwpmJnZuqWb6edrYOMtsgB8lsgClGntC1rzTxX+jlNNAAAAAElFTkSuQmCC" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WI-Update' title='ACME System 1' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CvType="InputBox" DesignTimeRectangle="54, 362, 108, 20" ElementType="Text" FriendlyName="'Add Comments'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Add Comments:' check:innerText='Add Comments:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHAAAAAYCAYAAAAiR3l8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABZSURBVGhD7dExDQBBDMCw54+tlKr+ciQsxVvmfPfMzO3uqygaiGsgroG4BuIaiGsgroG4BuIaiGsgroG4BuIaiGsgroG4BuIaiGsgroG4BuIaiGsgroG0ux+Ds8mA/h29EwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="4177c1728fd092a53a263dd5cc941936.png" xmlns="">06SdohgRuIUmzH_1PtwqjzQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Click 'Log Out'",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "l3NuRiBqTEaVZ_N_XrGOgg",
+  "Reference": "c5pCUmpFNkeur-5Ffk__sA/l3NuRiBqTEaVZ_N_XrGOgg",
+  "ParentRef": "c5pCUmpFNkeur-5Ffk__sA/GSTUvM985UaL3l7Z0f1NEA",
+  "Created": "2023-09-08T07:10:35.2214119Z",
+  "Updated": "2023-09-08T07:10:35.2214119Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.8.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

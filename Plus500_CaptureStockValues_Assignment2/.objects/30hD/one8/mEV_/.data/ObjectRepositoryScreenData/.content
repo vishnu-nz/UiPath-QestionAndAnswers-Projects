@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="js-NC6biYUqkVXrwn9IBHg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="1912, -8, 1936, 1048" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI8SURBVGhD7ZXJS1tRFMb9m1xIlxYqBcFC6aLVol0pOBRbiiIWuiy4rHTXRV1qaHEeGttFnRApsYrE0KhxyKA2GDUKKppjzh1ebt57iWbjiXA++G2+973L/d67Q0lpjQfuM1yAGi5ADReghgtQwwWo4QLUcAFquAA1XICaggp09y7DbfR1cFXkn7VNwNrOkXKdSqUAloNxeNw8LPIPGwbgj39f+Lm0FUtCdafXmpOjQN2Hn9D+ac7CfGYvsBk9Bv/GgYOuHp/IT/miKiml85H9E+VIff+1LvJY3FQsfiryG+Hsj7D0L27NyVFgfHZLxaTMZ/YCLzoyX8KNxPGZSsrJa//Bq2/KlQpsJoSPX98U5vQ7+L7W5WXK8q0CjR9/CxZW9lRMSvsVTUPwpd+vXKknb8esgdxInl6oJEBw+zDrmSn9bDHwXzlSZh4zprRvFbhJnZ/nHb/YLly7gVACKl+PiDGLrgCubXOta8K2Nd3nDYoxi66AztqpejOqUlLT6c2L/p0WePl+UjD7N6YiUtovTx9xOmsHl4wpkgKafKdQLqpa3f/AYfJcOfL81vmy2sJPoVAkcwpdXbmcQpp890BL15TrHtjeTaqhpfS5PrPofg+E97L3jMe7JvI9wwHlSO2qe8B+GfrSf0rPyVEgH7gP8gm/DN6suCcw//TdOKyGDnLerOjjZB41Dol8ef0AzC3FxDi5hJfa844f1pwKKlCMcAFquAA1XIAaLkANF6CGC1DDBajhAtTc8wIeuAaJnvHQE/Y0IAAAAABJRU5ErkJggg==" Selector="&lt;html app='msedge.exe' title='Online CFD Trading | Trading the Markets | Plus500' /&gt;" Title="Online CFD Trading | Trading the Markets | Plus500" Url="[in_Plus500URL]">
+      <imageRef attrName="InformativeScreenshot" originalValue="df64131d184fe06b7e4038b34eeb737e.jpg" xmlns="">0Amv4I7ME_0y1mC3atdZxxg</imageRef>
+    </TargetApp>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="https://www.plus500.com/en-NZ/" IsVariable="False" Name="in_Plus500URL" />
+    </scg:List>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

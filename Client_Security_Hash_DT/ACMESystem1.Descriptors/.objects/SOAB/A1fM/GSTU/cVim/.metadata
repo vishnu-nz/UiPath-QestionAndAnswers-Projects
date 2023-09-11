@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Click 'Work Items'",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "cVimFbJ51EObSUk0l64vRA",
+  "Reference": "c5pCUmpFNkeur-5Ffk__sA/cVimFbJ51EObSUk0l64vRA",
+  "ParentRef": "c5pCUmpFNkeur-5Ffk__sA/GSTUvM985UaL3l7Z0f1NEA",
+  "Created": "2023-09-08T07:10:35.2321381Z",
+  "Updated": "2023-09-08T07:10:35.2321381Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.8.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

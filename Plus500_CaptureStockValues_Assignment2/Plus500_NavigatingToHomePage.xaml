@@ -1,0 +1,402 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Plus500_NavigatingToHomePage" this:Plus500_NavigatingToHomePage.in_Plus500URL="https://www.plus500.com/en-NZ/" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Plus500URL" Type="InArgument(x:String)" />
+    <x:Property Name="out_strHighNZD" Type="OutArgument(x:String)" />
+    <x:Property Name="out_strLowNZD" Type="OutArgument(x:String)" />
+    <x:Property Name="out_strHighAUD" Type="OutArgument(x:String)" />
+    <x:Property Name="out_strLowAUD" Type="OutArgument(x:String)" />
+    <x:Property Name="out_NZDAverage" Type="OutArgument(x:String)" />
+    <x:Property Name="out_AUDAverage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>751.2,1121.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Plus500_NavigatingToHomePage_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Studio.Forms.Runtime</x:String>
+      <x:String>UiPath.Forms.Activities</x:String>
+      <x:String>UiPath.Platform.GlobalVariables</x:String>
+      <x:String>UiPath.Forms.Activities.Base</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Forms.Runtime</AssemblyReference>
+      <AssemblyReference>UiPath.Forms.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Plus500_NavigatingToHomePage" sap:VirtualizedContainerService.HintSize="650,695" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="588,584" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:03">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="546,409" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Online CFD Trading the Markets  Plus500" sap:VirtualizedContainerService.HintSize="484,298" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="4b99fd07-2f45-447f-837f-eb32f2358f7d" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+                    <Sequence DisplayName="Sequence - NZD" sap:VirtualizedContainerService.HintSize="450,1002" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click 'BUTTON search-button''" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b99fd07-2f45-447f-837f-eb32f2358f7d" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.plus500.com/en-NZ/" ContentHash="SXumzEMoq0WTl3GsmWcABQ" DesignTimeRectangle="1363, 168, 42, 42" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Click 'BUTTON search-button''" FullSelectorArgument="&lt;webctrl id='search-button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='search-button' tag='BUTTON' type='button' class='btn btn-link' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;             &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;            ' /&gt;" Guid="a70e0827-08f0-4563-a4db-517905c8b1c3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALVSURBVGhD7Zf7S1NRHMD7A4qoqKAH0Q9RmCVWhkhBhZU9iIIaRUYPiAqj6EFBJKxMXU+qbVSkDSN0mT0YFEqMNBArtWYvsmHDmmE6pu7hK+Y3v6ezU9oYO/eejgj3A+eHfb/ne/e59557v+eOgGGKJi4bTVw2mrhsNHHZaOKyESbe+zMEbz58hw5fN438X1SJ+/zdoL9kh9Qt+TBuThaMnKknY/5qE+zPtMH7+h90pngUi1ttb2F6ynkmG2mMjjsFJwxlEOzspVXiUCSecdLG5EbN0sO2g8VQWv4Znr90kZF54SlMTjKwOXHLLgtfQtzij+2fmNC8VSaob2ilmYH4Az2w/dA9Nnf3sQc0IwYu8baOLphCr+S05HPQ3Oqnmcj09QGsTLcw+bIKJ82oh0vcaKliEnceOmg0Oo3uNhgz+zSpwZMQBZf4zsMlRAAfSryasZJ+oJjUjU84A6EQR2EUuMTnLr9KBDbuKaSR2DAXvCB1OD46W2hUHVzi4TfF5gwrjcRG4aM6Jm6vbKBRdXCJr9h6i/z5og03aCQ2DOYKJt7U7KNRdXCJH816wgS+NHppNDr4LCSmGUkN3jFRcInfLnnNxDftjW2d51trWA2euCi4xLGpYBcMi+BDF42aOjfbw0xIyIYWT4Bm1MMljrxyfCN7kLA8dkeny0Ozv/F4g6Tt/73xyjY+o1kxcIsjlru1A+RxLNXlQVp/g8EmMzb+j3B44KsUl5e3vZMeRR2KxJHad00Qn3rlH8HBY9eR+5BXVM1+J6+7JkResTgSCPZArqkcdPuKIGmNmS2NGYsvwvGcUqh2uMk811cv2duE5VPWX4f2/n2PGlSJ84AfFVMXnmXy2AvUbHWliSOR5PGuKUGqOILykxbkMvklupuK5KWLI/hRPVg+2MX3eTck4gjKT0zMUXzVh0wcwbfO2h0Fw2epiEATl40mLhtNXDaauGw0cbkA/AKc36DroG0jZwAAAABJRU5ErkJggg==" InformativeScreenshot="8df43001f3cb250414c457a14c109f8e.png" Reference="ewEyXv-L90KY8Ws8LpXXhQ/dl0daZhtvkmAJuPE4yus2A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Online CFD Trading | Trading the Markets | Plus500' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target CvElementArea="1419, 169, 203, 40" CvTextArea="1474, 180, 93, 18" CvTextArgument="Start Trading" CvType="Button" DesignTimeRectangle="1421, 171, 200, 36" ElementType="Text" FriendlyName="'Click 'BUTTON search-button''" FullSelectorArgument="&lt;webctrl aria-role='button' parentid='mainHeader' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' parentid='mainHeader' tag='A' type='' class='btn btn-plus start-trading-link' aaname='Start Trading' check:innerText='Start Trading' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Search'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="4b99fd07-2f45-447f-837f-eb32f2358f7d" Text="NZDUSD" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.plus500.com/en-NZ/" ContentHash="Xd8tDlRe1UGkN1BPOSPJjA" CvElementArea="1068, 233, 313, 47" CvTextArea="1084, 248, 50, 15" CvTextArgument="Search" CvType="InputBox" DesignTimeRectangle="1069, 234, 312, 44" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Type Into 'Search''" FullSelectorArgument="&lt;webctrl id='searchInstruments' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='searchInstruments' tag='INPUT' type='text' class='' aaname='Search' /&gt;" Guid="0a15e637-82c7-45ac-9283-ca72494eccf4" ImageBase64="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" InformativeScreenshot="640eca6f33da4c668c13599c5a51ed98.png" Reference="ewEyXv-L90KY8Ws8LpXXhQ/k30YYeCT00m6cF3FRjlPcw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Online CFD Trading | Trading the Markets | Plus500' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvTextArgument="LOGIN" CvType="Text" DesignTimeRectangle="1237, 171, 62, 37" ElementType="Text" FriendlyName="'Type Into 'Search''" FullSelectorArgument="&lt;webctrl class='nav-link' parentid='navbarSupportedContent' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='nav-link' parentid='navbarSupportedContent' tag='A' type='' aaname='Login' check:innerText='LOGIN' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAApCAYAAACBZ/9xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALrSURBVGhD7ZZNSxtRFIb9Af4LF1m4yq7gQsguZCNkl2Uh4KIrl24SqzRmLNRgxJR2kVBSIlQwNKJdqLXQNhE/UsVQS6u2FsdNNfWzYDJvT5LjZCaMNiltre154YWcj7lz75OZe6cJorIEBEtAsAQES0CwBARLQLAEBEtAsAQES0CwBARLQLAaAKFi1OtHs7LE8QUqqHg+HIbjBvXa/Gh1hqGk3uGUyyZ9zSGpVHtb2u+i6+E88gWuszIK1b0T2DXG9kEkVU4YtRCjsWLIcFivfi2I4yUoTlpQRwSxmRy2PuYw9TgCl90PB11ngnHe64kjubqN/N42sqk4PASlpfOZvuiSLEGUwHVNI885XX8DiOz9fjQ7aBLHnGCdpmNos/UjlOMEKTvcZ9mL1VHq7UNolWOS9RNBIAhG99whZ1lXDyKHkMMP16MNjo3aQMxNEw+tcLwChRZi3buPty/nkf1cfX4sQXjHMBqwgHnlINQJeOgfUhY4rpFpMT/orZU1CIqPX6G79NoRYB3bfwmCfucnw/SKGF676w5id2yQFkA9bM9Y9Ui4DIQ+L4q3SqfNdQTRky6XKvp2SCfHPvkFehoCQfqQhJuuuTlO11z9ZnnZBli7WVY21rbh89goOlYbBUEqn1j2MKZSPwlC0zTU5x0kvD40BxctahUvRwK0i0eRPjLnT15H6UjsxeBKNbcZH6CJ30Ni29yraYsI2nzwPNnRc+kg3debgnpBXPbpGwSdPrTYqWajORhrdbhxELfnsP9lr8YHlZ4jWkQHTaZjBNHpNWxurWEyPkIfVD44COCJcbyzT0h00njOIUSm16HSOOr7DBJ3BmjzCyC4fKL31gWCXAH+p0CUb1Rrw43PdjAbHqLP5kqtlRYafLpuhmDsfTACdzuPY++F61YU42t7pr56QWjaAWZ9pbF+K4h/2wKCLSDYAoItINgCgi0g2AKC3VQsFiEuCohzCwi2gGA3FQpFiAWEbgHBFhBlF/Ed3Dmc/yVMWW0AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Stock Name NZD USD" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b99fd07-2f45-447f-837f-eb32f2358f7d" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.plus500.com/en-NZ/" ContentHash="h2yvNX4ZPE6NV_WlrvDZ_A" CvTextArgument="NZD/USD" CvType="Text" DesignTimeRectangle="1077, 342, 232, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Click Stock Name NZD USD'" FullSelectorArgument="&lt;webctrl parentid='results' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='results' tag='A' type='' class='link-title' aaname='NZD/USD' check:innerText='NZD/USD' /&gt;" Guid="eeccffb3-2087-44c9-8ce6-c7cb56239e08" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOwAAAAZCAYAAAAyjMK+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAR1SURBVHhe7ZrZb0xRHMf9AR68Wf6BJn0QW+JJmj4gIjwQREQs0QiREELE2ggtioamqEqjttoqKpTYSlWj2qKqqpYy6Kq6TPd2Zn7mezjTc7fp3L7MvcnvJp/M3HN/99zzMJ85v/s7Z9TomERiGMYdsLAM4yJYWIZxESwsw7gIFpZhXIRG2OrPzdTbN0hJaU81QSD7+mvq7OqnhG03Q7FWR/+Ajw6mPzONG/T56X1NE63fmafpXyV+8Vny1LXT/YJP4nl4bkFxrSEOz8CzMDbZhn7RP56Do7t3gJ68+Cr6lDEjGRPDOAGDsDi+/2zT/MCBXtiFay+J7ypb9uVTfZOXWtt7aOXmG6E+G3930tb990TM2ZxSam7pop7eQTp08p/UeiBiW0ev6A/3RCrsuh154r6W1m7xHJzfflAt/oQqPzbStLnpIm4kY2KYaDN2cpJRWL8/IMjNf68J1gtrBu7BbHX+xtCMhz7rGr00d0V2qG1BwkX61dBhaJe8KPXQp9oWmjQ7zZawdx9/FHLuPfpIEwchEXc8q1icj2RMDBNtps87aRS2KTjT1HpaqcPbR5sS74SuDScsZqvungF6V90oRJPtZnKAjIuvhNz4VNshDma/a3cqxbkdYRGDMWBmVuOWrM+hC7lvaO32W+Lc7pgYJtpMmJZMcYsyjcLih3wgrcAgXzhhkWp+CN7bHkxHN+4dkhxYyYF0tau7nx4VfdG0Q5Y/bT20ekuuOLcj7LEzRTQw6Kear79p6YYrhniJ3TExTLSZOPMExcanmguLH3L+kxrNbBNO2Cu334lYfOqvWclhJuK4KUn0tqpBgO9WcRK9sLjn3LVykRYHAiRm6su3Kgzv43bGxDBOYMaCDBo/NdlaWIDvKCIhTbUSFjMqZtYv3/+EijoqduTArIrZVU1J7QgrmbP8nHifRiEJ4qKYdOpCSeg6C8u4jVnLsmhM7D5rYXF+IqtYCIEU0UxYpMtIm5E+4x1WtqtYyWGWfuK9FbMi/iBk20iEVcFSzbcfrULaPf+LUXbGxDBOAJMQPsMKixSzvLJO/NgLS74ZhEU1GKkw0mfZpsdKDlRu1ZQb8qMyjAqxGjd/1XlqaO6kN1X1mnZw+FQh9fX7KOtqmbg/PfslHcl4bhqnih3pmBjGKUQ0wwLMOljbxFKPKizWWbHearZmq2LWp9kSCiq7eA5mTRkHpMhIb/WFJMy6+DPZlfIwbByWc1CMgtg4j3RMDOMUhn2HVdtRTFKFlTOvlABtemQf6FNuUoD8OXkVYmODfpMCdjVhd5OZ/CmnC0UhyfOrjVIzi2h78n0qLvOI52MXkyxQyTiIJzdOIM3GEpXVZo5wY2IYpzBslVhtRzEJRSUpLK4jLtwh3znRp3oghdVvA4SkkBUbH2Sbnt1HHooCmM8XEIUkb2cfXQ/KGBN3TBOn35oon7dm61AqH8mYGMZJmK7DRgukwXIrotl1hmFMdjoxDONcDHuJGYZxNiwsw7gIFpZhXAQLyzAugoVlGBfBwjKMa0ikv1pEP1DEQ9wWAAAAAElFTkSuQmCC" InformativeScreenshot="4e1bd6b1c81b1024b51b51a7c442f930.png" Reference="ewEyXv-L90KY8Ws8LpXXhQ/wgjudJNHYkuHlQCsC2XNhw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Online CFD Trading | Trading the Markets | Plus500' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvTextArgument="Instruments" CvType="Text" DesignTimeRectangle="1069, 310, 312, 24" ElementType="ListItem" FriendlyName="'Click Stock Name NZD USD'" FullSelectorArgument="&lt;webctrl parentid='results' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='results' tag='LI' type='' class='search-results-category' aaname='Instruments' check:innerText='Instruments' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATwAAAAcCAYAAAD83gOEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMaSURBVHhe7dlZTxNRGMZxP4B33hvviBg0aiISTSoqBgiIRiDuoW6AiJoiIJSlYVNQWQoB4xIXIkpCUAQFQcFv9trnJYdMDi202MSM57n4pZ2ZnuXqn5nptu0ZESEicgGDR0TOYPCIyBkMHhE5g8EjImcweETkDAaPiJzB4BGRM5IOXk7JmLQ8WZLCq2/jXt/MnhOD0vT4h5RXf4x7/V+61fhZQh3f4l4jov8HgxfD4BG5YUvBQ7wauuelqumLdAwuS1d0RW7UT8uOrE4VDE1J59CydA+vSF3HdymrmpD2Zz+lZ/i3QmAwT3MsgI09CxrCYN2Uzom5sR7CiPM4Nt8fPlrQOcO9i3Ku8oPuB8cYt+9UVMfhE2vifFtszYIrq4FG0KqbZ/Qcrt1tm5VdOX163uwLa+zPH163fzM3EfnbloOHONyPzElGoF9Kro3rtUDpC8m//EbCfYuSW/5K9uZFNWgIiH2Hh3kQwdLKCY0kjjcKHkJ18sJrXa++a16PsQZihHBijZ3ZvXKvfU5qW2dl97EBuXhnUuN4sHBEw4b5DhSM6Djstzj4Xtfy3uEl2j+uEZG//dUdHr7b1xCl1qdLGincQZnx8YLnDdxmwfM+ctqPoDiG7OJRDRz2gPNZeUNr+8Tvzdr2XrzzJdo/Eflf2oOHu7Uz18c1PHjUNY+EdmTswNnH+F2qwcMceBQ1j6iGGW/WtvfinS/R/s1aRORfaQ+ed0zm8UENyc2G6XWRsQNnjnFXhmP8LtXgHTn7XEMVKHu5ds1INnhe3v3b14jIf9IevEu1k/pO7VDRqL5vM8HIzB3QyJyv+aRj7OAhUniULKp4p+PwfjDV4OEdHu7I8A4Pc2APNS1f9RO/TxQ87A/jcHeXaP9mLSLyr7QHD++9bodn9HHQ/pezIjSl5xAQO3iIDf7pxTg8liI05nqywcP3w6fH5EHn6r+0mAd/OGDujYKH93aR/l967mjsLjHR/onI35IOHhGR3zF4ROQMBo+InMHgEZEzGDwicgaDR0TOYPCIyBkMHhE5g8EjImcweETkDAaPiBwRkT/HZbtOD+IXNgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <uix:NCheckState DisplayName="Check App State 'Check App State 'NZDUSD''" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="4b99fd07-2f45-447f-837f-eb32f2358f7d" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NGetText DisplayName="Get Text 'High'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="4b99fd07-2f45-447f-837f-eb32f2358f7d" TextString="[out_strHighNZD]" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.plus500.com/en-NZ/Instruments/NZDUSD" CvType="AnyWordGroup" DesignTimeRectangle="292, 347, 115, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'High'" Guid="d202652d-0ec4-4ca0-bea2-7b30e69d4e08" InformativeScreenshot="d3967bcfbb626577b5b447cfc853d108.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='NZD/USD CFDs | Forex Pairs | Plus500' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvTextArgument="High:" CvType="Text" DesignTimeRectangle="244, 346, 44, 21" ElementType="Text" FriendlyName="'High'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NGetText.Target>
+                            </uix:NGetText>
+                            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[out_strHighNZD]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[out_strHighNZD.Replace("Low:","")]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <uix:NGetText DisplayName="Get Text 'Low'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="4b99fd07-2f45-447f-837f-eb32f2358f7d" TextString="[out_strLowNZD]" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.plus500.com/en-NZ/Instruments/NZDUSD" CvType="AnyWordGroup" DesignTimeRectangle="412, 345, 71, 22" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'0.58764'" FullSelectorArgument="&lt;webctrl idx='2' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='STRONG' class='' /&gt;" Guid="bb203be0-3c37-4ac7-b387-e497056fa1f4" InformativeScreenshot="93cdf8830928845d10914dc81ae9b6c6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='NZD/USD CFDs | Forex Pairs | Plus500' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvTextArgument="Low:" CvType="Text" DesignTimeRectangle="368, 347, 39, 16" ElementType="Text" FriendlyName="'Low'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NGetText.Target>
+                            </uix:NGetText>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.plus500.com/en-NZ/Instruments/NZDUSD" ContentHash="xcTsr3puOUyZct5H9RPV6w" CvTextArgument="NZD/USD" CvType="Text" DesignTimeRectangle="245, 240, 120, 26" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Check App State 'NZDUSD''" Guid="e2c8a980-796b-4811-8b42-e3ddbc84e88e" InformativeScreenshot="284dd5858f07e456affec2c2bb26ed23.png" Reference="ewEyXv-L90KY8Ws8LpXXhQ/cBlWuBvQ6Eiwo_cQpIpwrA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='NZD/USD CFDs | Forex Pairs | Plus500' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvTextArgument="Plussoo" CvType="Text" DesignTimeRectangle="245, 123, 160, 46" ElementType="Text" FriendlyName="'Check App State 'NZDUSD''" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='navbar-brand p-0 me-auto me-lg-0 logo' aaname='                      &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Plus500 logo inside homepage link                                                                                                                                                                                                                                          ' check:text='Plus500 logo inside homepage link' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;NZD---High--&quot;+out_strHighNZD.Replace(&quot;Low&quot;,&quot;&quot;) +&quot;NZD---Low--&quot;+out_strLowNZD]" />
+                    </Sequence>
+                    <uix:NNavigateBrowser DisplayName="Navigate Browser - Go Back" sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V3" />
+                    <Sequence DisplayName="Sequence - AUD" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click 'BUTTON search-button''" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b99fd07-2f45-447f-837f-eb32f2358f7d" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.plus500.com/en-NZ/" ContentHash="SXumzEMoq0WTl3GsmWcABQ" DesignTimeRectangle="1363, 168, 42, 42" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Click 'BUTTON search-button''" FullSelectorArgument="&lt;webctrl id='search-button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='search-button' tag='BUTTON' type='button' class='btn btn-link' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;             &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;            ' /&gt;" Guid="a70e0827-08f0-4563-a4db-517905c8b1c3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALVSURBVGhD7Zf7S1NRHMD7A4qoqKAH0Q9RmCVWhkhBhZU9iIIaRUYPiAqj6EFBJKxMXU+qbVSkDSN0mT0YFEqMNBArtWYvsmHDmmE6pu7hK+Y3v6ezU9oYO/eejgj3A+eHfb/ne/e59557v+eOgGGKJi4bTVw2mrhsNHHZaOKyESbe+zMEbz58hw5fN438X1SJ+/zdoL9kh9Qt+TBuThaMnKknY/5qE+zPtMH7+h90pngUi1ttb2F6ynkmG2mMjjsFJwxlEOzspVXiUCSecdLG5EbN0sO2g8VQWv4Znr90kZF54SlMTjKwOXHLLgtfQtzij+2fmNC8VSaob2ilmYH4Az2w/dA9Nnf3sQc0IwYu8baOLphCr+S05HPQ3Oqnmcj09QGsTLcw+bIKJ82oh0vcaKliEnceOmg0Oo3uNhgz+zSpwZMQBZf4zsMlRAAfSryasZJ+oJjUjU84A6EQR2EUuMTnLr9KBDbuKaSR2DAXvCB1OD46W2hUHVzi4TfF5gwrjcRG4aM6Jm6vbKBRdXCJr9h6i/z5og03aCQ2DOYKJt7U7KNRdXCJH816wgS+NHppNDr4LCSmGUkN3jFRcInfLnnNxDftjW2d51trWA2euCi4xLGpYBcMi+BDF42aOjfbw0xIyIYWT4Bm1MMljrxyfCN7kLA8dkeny0Ozv/F4g6Tt/73xyjY+o1kxcIsjlru1A+RxLNXlQVp/g8EmMzb+j3B44KsUl5e3vZMeRR2KxJHad00Qn3rlH8HBY9eR+5BXVM1+J6+7JkResTgSCPZArqkcdPuKIGmNmS2NGYsvwvGcUqh2uMk811cv2duE5VPWX4f2/n2PGlSJ84AfFVMXnmXy2AvUbHWliSOR5PGuKUGqOILykxbkMvklupuK5KWLI/hRPVg+2MX3eTck4gjKT0zMUXzVh0wcwbfO2h0Fw2epiEATl40mLhtNXDaauGw0cbkA/AKc36DroG0jZwAAAABJRU5ErkJggg==" InformativeScreenshot="8df43001f3cb250414c457a14c109f8e.png" Reference="ewEyXv-L90KY8Ws8LpXXhQ/dl0daZhtvkmAJuPE4yus2A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Online CFD Trading | Trading the Markets | Plus500' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvElementArea="1419, 169, 203, 40" CvTextArea="1474, 180, 93, 18" CvTextArgument="Start Trading" CvType="Button" DesignTimeRectangle="1421, 171, 200, 36" ElementType="Text" FriendlyName="'Click 'BUTTON search-button''" FullSelectorArgument="&lt;webctrl aria-role='button' parentid='mainHeader' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' parentid='mainHeader' tag='A' type='' class='btn btn-plus start-trading-link' aaname='Start Trading' check:innerText='Start Trading' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Search''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" Text="AUDUSD" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.plus500.com/en-NZ/" ContentHash="Xd8tDlRe1UGkN1BPOSPJjA" CvElementArea="1068, 233, 313, 47" CvTextArea="1084, 248, 50, 15" CvTextArgument="Search" CvType="InputBox" DesignTimeRectangle="1069, 234, 312, 44" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT searchInstruments'" FullSelectorArgument="&lt;webctrl id='searchInstruments' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='searchInstruments' tag='INPUT' type='text' class='' aaname='Search' /&gt;" Guid="0a15e637-82c7-45ac-9283-ca72494eccf4" ImageBase64="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" InformativeScreenshot="640eca6f33da4c668c13599c5a51ed98.png" Reference="ewEyXv-L90KY8Ws8LpXXhQ/k30YYeCT00m6cF3FRjlPcw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Online CFD Trading | Trading the Markets | Plus500' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvTextArgument="LOGIN" CvType="Text" DesignTimeRectangle="1237, 171, 62, 37" ElementType="Text" FriendlyName="'Login'" FullSelectorArgument="&lt;webctrl class='nav-link' parentid='navbarSupportedContent' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='nav-link' parentid='navbarSupportedContent' tag='A' type='' aaname='Login' check:innerText='LOGIN' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAApCAYAAACBZ/9xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALrSURBVGhD7ZZNSxtRFIb9Af4LF1m4yq7gQsguZCNkl2Uh4KIrl24SqzRmLNRgxJR2kVBSIlQwNKJdqLXQNhE/UsVQS6u2FsdNNfWzYDJvT5LjZCaMNiltre154YWcj7lz75OZe6cJorIEBEtAsAQES0CwBARLQLAEBEtAsAQES0CwBARLQLAaAKFi1OtHs7LE8QUqqHg+HIbjBvXa/Gh1hqGk3uGUyyZ9zSGpVHtb2u+i6+E88gWuszIK1b0T2DXG9kEkVU4YtRCjsWLIcFivfi2I4yUoTlpQRwSxmRy2PuYw9TgCl90PB11ngnHe64kjubqN/N42sqk4PASlpfOZvuiSLEGUwHVNI885XX8DiOz9fjQ7aBLHnGCdpmNos/UjlOMEKTvcZ9mL1VHq7UNolWOS9RNBIAhG99whZ1lXDyKHkMMP16MNjo3aQMxNEw+tcLwChRZi3buPty/nkf1cfX4sQXjHMBqwgHnlINQJeOgfUhY4rpFpMT/orZU1CIqPX6G79NoRYB3bfwmCfucnw/SKGF676w5id2yQFkA9bM9Y9Ui4DIQ+L4q3SqfNdQTRky6XKvp2SCfHPvkFehoCQfqQhJuuuTlO11z9ZnnZBli7WVY21rbh89goOlYbBUEqn1j2MKZSPwlC0zTU5x0kvD40BxctahUvRwK0i0eRPjLnT15H6UjsxeBKNbcZH6CJ30Ni29yraYsI2nzwPNnRc+kg3debgnpBXPbpGwSdPrTYqWajORhrdbhxELfnsP9lr8YHlZ4jWkQHTaZjBNHpNWxurWEyPkIfVD44COCJcbyzT0h00njOIUSm16HSOOr7DBJ3BmjzCyC4fKL31gWCXAH+p0CUb1Rrw43PdjAbHqLP5kqtlRYafLpuhmDsfTACdzuPY++F61YU42t7pr56QWjaAWZ9pbF+K4h/2wKCLSDYAoItINgCgi0g2AKC3VQsFiEuCohzCwi2gGA3FQpFiAWEbgHBFhBlF/Ed3Dmc/yVMWW0AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'AUD/USD'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b99fd07-2f45-447f-837f-eb32f2358f7d" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.plus500.com/en-NZ/" CvTextArgument="AUD/USD" CvType="Text" DesignTimeRectangle="1077, 299, 225, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'AUD/USD'" FullSelectorArgument="&lt;webctrl parentid='results' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='results' tag='A' type='' class='link-title' aaname='AUD/USD' check:innerText='AUD/USD' /&gt;" Guid="34866ac4-c7ff-4dbd-a02d-bafbd2bcfb9b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOUAAAAZCAYAAADOmel0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARMSURBVHhe7ZrpSxVRGIf7A/rQt5Z/QPBDtAh9CvFDRUgRkUWEtCEtBFJCRBSahEaLkmLikuRSmkslaBRaZpiVSxntbmnuprnvV9/u78C5nLkzV5ybjQO9Fx68Z5k7R5hn3nPec5Yt94kghmHsA0vJMDaDpWQYm8FSMozNYCkZxmYYSrlqQxTVfe6i0bEpOn2pWNf+taGXOrqHKfBguqYeZdSjXS2rn4nJGaqqa6NdRzM116ocCSug/oFxSs2upisJ5TQ17aD0vHe6fqhDG/rIuovXS6i1fYAcjjmamyMaHpmkvKKP5OMfI9q9HRPDWIWhlJBiYGhCPLDFz77p2s1K2djSTyFnH9CJ84WU6xRkaHiSfg+OU2h4keZ6SUb+O+rtG6Wg4/dMSRkV/0IIBiljUyrE71dUtdD0zCw9f9UkXjbejolhrGDl+ihjKSHF2Pg0tXUOUWvHIAXsTdW0m5VSliV48Aed0n/63kPrtsVr2lCub+6jV9WtomxGyvefO8XLBC8Vtd+Tsnrx/4RFPvZqTAxjFZt23NJLKaVoau2n2zk1NDYxTeE3SjV9/lZKgAg8PjFDF66VaOoxXYZYMckVomxGStxHRli137Fzjyiz4D3tO5nt1ZgYxgrW+EWTf1CKXkpEE0SV/OJPrmlsWWWzps9iSHk18SVNTjko7X6Nph5iqNHZjJSYhs7OztHr2p+0PfiOrj/wZkwMYwVrt8SRb0CsXko1WsiET48z+uwOyXL1WQwpjWSDiBAS0835+kncpUQy52l5A804ZkWiB2vLpKwqV5IHmB0Tw1jF5t1JtHpjtFZKKQUeZv89yaIO60skSm6mVbr6/SspMU1GZFanj2aklOw/lUOlFY3it5CBVX+TpWTsytYDabTCN1IrJaRA9lLNuGI9hm0FJFFk3WJIaTRVRHIH61k10eKNlCrYIun7PSYyq4fO5JseE8NYhVxyaaSEFJ4+iDYyq1n+5od4yINDc13Xgp2HM6ird0RkMFGeTwBMUdWkCqbH3b9GxLpQ7YctC+yXqi8KSdbDOiHR5bgyEeUhk1GSBv2kvGbGxDBWoouUkAJrx5a2ASEC9vAk2YUfxBoNU1n0hTh4yOOUKS2QUU0K5EkAo+0HTI8hOiKz2leOC/uKfoEJrnpch+vly8FTP4CklZTXzJgYxkp0a0pIgbWje6QC8oGXU0uU27uGaGR0SvTHA42/2IBHPdpxnRRAbtSjH4TFdepGvUwoAXxX7w3uOiMdkjdfnCJhig0gD+rQ5t4P45SHBxD9MCXHywbRdKFjYhir0WRfpRTqFNUdTG3VY3c4klb7sUNEIHzwF2X1qJoUQP1g39P9SBvuiWN1yJTKOhWMLzHzrVgbInED8B117hKrx+zU+8n5+kLHxDBW43GfcilQj9UZtTPM/4LhiR6GYZYOj2dfGYZZOlhKhrEZLCXD2AyWkmFsBkvJMDaDpWQYWxFBfwD2aAmJKDWgxQAAAABJRU5ErkJggg==" InformativeScreenshot="7afa2cfe8fa6737143c4b1d8f318945d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Online CFD Trading | Trading the Markets | Plus500' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target CvTextArgument="Instruments" CvType="Text" DesignTimeRectangle="1069, 267, 305, 24" ElementType="ListItem" FriendlyName="'Instruments'" FullSelectorArgument="&lt;webctrl parentid='results' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='results' tag='LI' type='' class='search-results-category' aaname='Instruments' check:innerText='Instruments' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATUAAAAcCAYAAAAAyyhOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMqSURBVHhe7dlbS1RRGMbxPkAQ1X10JxkaFXigwKwMFc0ilc5oJzWzQlPzLI5aanka0ciig2QJYpmapqV9szefd1iyWc6ogw1tF8/Fj5m996zD1Z+99+zaHdcqRESuYNSIyCmMGhE5Y09iD6NGRG5A0PaljDJqROSGvUnDjBoRuQNBY9SIyBmMGhE5JeqopeaNSGPPkmTffB/2+mYOn+mXuuc/pbDsc9jr/9O92q9S2TYX9hoR7QyMmgejRrTzbStqCFRNx7yU1n2Ttv5laR9ckTvVU7I/IaCKKyclMLAsHcEVqWr7IQWl49Ly8pd0Bv8oRATz1K9GrrZzQWNXXDWpc2JurIf44TyOzfenzxZ0zoauRblU8kn3g2OMO3JuUMfhE2vifPPqmlk3QhFGtMrqp/Ucrj1snpGDqd163uwLaxzNDK7bv5mbiPxr21FDAB63zkpcWq/k3RrTa2n5ryXz+jtp6F6U9MI3kpgxqNFCJOw7NcyD0OWXjGsIcbxR1BCjs1fe6nrV7fN6jDUQHMQRaxxI7pJHLbNS0TQjh071ydUHExrA49lDGi/MdyxrSMdhv7nFH3Ut751apP3jGhH51z+5U8N3+xrC0/RiSUOEOyEzPlzUvBHbLGrex0P7cRHHkJw7rBHDHnA+IWNgbZ/4vVnb3ot3vkj7JyJ/i1nUcNd14faYxgWPpebxzQ6JHTH7GL+LNmqYA4+N5nHSMOPN2vZevPNF2r9Zi4j8KWZR846JP92vsbhbM7UuJHbEzDHurnCM30UbtRMXX2mM0gpG164ZW42al3f/9jUi8peYRe1axYS+40rKGdb3XyYK8el9GpLL5V90jB01hAiPfTlFH3Qc3tdFGzW8U8OdFd6pYQ7sobzxu37i95Gihv1hHO7SIu3frEVE/hSzqOE91P2GaX10s/89LKqc1HOIhB01BAX/oGIcHiERE3N9q1HD95TzI/IkEPr3E/PgJT/m3ihqeI/W2vtbz51cvduLtH8i8q+oo0ZE5GeMGhE5hVEjIqcwakTkFEaNiJzCqBGRUxg1InIKo0ZETmHUiMgpjBoROYVRIyKnhKI2Kn8B2vB4qyQSGZMAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <uix:NCheckState DisplayName="Check App State 'AUD/USD'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="4b99fd07-2f45-447f-837f-eb32f2358f7d" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,591" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NGetText DisplayName="Get Text 'High'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="4b99fd07-2f45-447f-837f-eb32f2358f7d" TextString="[out_strHighAUD]" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.plus500.com/en-NZ/Instruments/AUDUSD" CvType="AnyWordGroup" DesignTimeRectangle="292, 347, 115, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'msedge.exe AUD/USD'" Guid="4ec478bb-c1e5-455d-aea7-b9ef388b0d2a" InformativeScreenshot="3f7cf6b45973e83f4d8d5a7332d919aa.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='AUD/USD CFDs | Forex Pairs | Plus500' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <uix:Target CvTextArgument="High:" CvType="Text" DesignTimeRectangle="245, 345, 43, 22" ElementType="Text" FriendlyName="'High'" FullSelectorArgument="&lt;webctrl aaname='High:' parentid='inst-details' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='High:' parentid='inst-details' tag='SPAN' type='' class='' check:innerText='High:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC8AAAAaCAYAAAAnkAWyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHJSURBVFhH7ZZNqwFRGMfvlxRJKUuxZCEvWZCksJOlhW/AisJSxFJ5SciCyFuS5K/nOO4dM0jzYq6aX03jeTrznN+cOec4P/hiDHm9MOT1QrH84XBAt9vF6XTimfdpt9uIRqOshhzu5KlYNpvlkZTVagW/34/hcMgzQKfTgcfjwWKx4Jn30V1eCYb8DTny9DuVSt0JnM9n1Ot1uN1umEwmdqe4UCigWCzyVn/yk8kEyWQSFosFNpsN+XxeUm8wGGC73fLMFU3kW60WWwf9fp91vNvtmJDP55PIu1wuxGIxjEYj1nY+nyMSiaBcLvNWYM9Tv7VajWeuqC5P93g8jmazyeIbx+MRiURCIu9wOO7qEfTyVEM4II+QyNNnfnWJOxPLT6dTBINBLJdLFguhgXk0bcSS4prPUH3kX3VsyAtQXX42myEcDn/ntKGFSdueeMHS8SGdTv9veeLRVpnL5WC1WmXJf3Sfp86Ef1JOpxPVahWZTEaW/Fv7vNbQwFQqFR4pRxP5zWaD/X7Poyvr9RqhUAi9Xo9nlKOJfKlUQiAQwHg8/p3zNGXoknPuf4Ym8iTcaDTg9XphNptht9slhy01+OicVxtDXh+AC210LiSBuRR0AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NGetText.Target>
+                            </uix:NGetText>
+                            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[out_strHighAUD]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[out_strHighAUD.Replace("Low:","")]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <uix:NGetText DisplayName="Get Text 'Low'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="4b99fd07-2f45-447f-837f-eb32f2358f7d" TextString="[out_strLowAUD]" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.plus500.com/en-NZ/Instruments/AUDUSD" CvType="AnyWordGroup" DesignTimeRectangle="412, 345, 71, 22" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'0.63777'" FullSelectorArgument="&lt;webctrl idx='2' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='STRONG' class='' /&gt;" Guid="977b5e8c-58c2-44d0-ad3b-3995d9fd6b58" InformativeScreenshot="427502f37a0da047021ee1f003b7779b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='AUD/USD CFDs | Forex Pairs | Plus500' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <uix:Target CvTextArgument="Low:" CvType="Text" DesignTimeRectangle="368, 347, 39, 16" ElementType="Text" FriendlyName="'Low'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NGetText.Target>
+                            </uix:NGetText>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.plus500.com/en-NZ/Instruments/AUDUSD" CvTextArgument="AUD/USD" CvType="Text" DesignTimeRectangle="245, 236, 119, 34" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'AUD/USD'" FullSelectorArgument="&lt;webctrl parentid='inst-details' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='inst-details' tag='SPAN' type='' class='inst-name' aaname='AUD/USD' check:innerText='AUD/USD' /&gt;" Guid="b441af00-9b2b-4e57-9529-9dfa00031edf" ImageBase64="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" InformativeScreenshot="1260dd3406a6989e02201c75ef34e33a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='AUD/USD CFDs | Forex Pairs | Plus500' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target CvTextArgument="Plussoo" CvType="Text" DesignTimeRectangle="245, 123, 160, 46" ElementType="Text" FriendlyName="'Plus500 logo'" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='navbar-brand p-0 me-auto me-lg-0 logo' aaname='                      &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Plus500 logo inside homepage link                                                                                                                                                                                                                                          ' check:text='Plus500 logo inside homepage link' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;AUD---High--&quot;+out_strHighAUD.Replace(&quot;Low&quot;,&quot;&quot;) +&quot;AUD---Low--&quot;+out_strLowAUD]" />
+                    </Sequence>
+                    <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_3" Version="V3" />
+                    <Assign sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_NZDAverage]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[((CDbl(out_strHighNZD)+CDbl(out_strLowNZD))/2).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_AUDAverage]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[((CDbl(out_strHighAUD)+CDbl(out_strLowAUD))/2).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;NZD Average:- &quot;+out_NZDAverage+&quot;----AUD Average---&quot;+out_AUDAverage]" />
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="1912, -8, 1936, 1048" BrowserType="Edge" ContentHash="js-NC6biYUqkVXrwn9IBHg" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI8SURBVGhD7ZXJS1tRFMb9m1xIlxYqBcFC6aLVol0pOBRbiiIWuiy4rHTXRV1qaHEeGttFnRApsYrE0KhxyKA2GDUKKppjzh1ebt57iWbjiXA++G2+973L/d67Q0lpjQfuM1yAGi5ADReghgtQwwWo4QLUcAFquAA1XICaggp09y7DbfR1cFXkn7VNwNrOkXKdSqUAloNxeNw8LPIPGwbgj39f+Lm0FUtCdafXmpOjQN2Hn9D+ac7CfGYvsBk9Bv/GgYOuHp/IT/miKiml85H9E+VIff+1LvJY3FQsfiryG+Hsj7D0L27NyVFgfHZLxaTMZ/YCLzoyX8KNxPGZSsrJa//Bq2/KlQpsJoSPX98U5vQ7+L7W5WXK8q0CjR9/CxZW9lRMSvsVTUPwpd+vXKknb8esgdxInl6oJEBw+zDrmSn9bDHwXzlSZh4zprRvFbhJnZ/nHb/YLly7gVACKl+PiDGLrgCubXOta8K2Nd3nDYoxi66AztqpejOqUlLT6c2L/p0WePl+UjD7N6YiUtovTx9xOmsHl4wpkgKafKdQLqpa3f/AYfJcOfL81vmy2sJPoVAkcwpdXbmcQpp890BL15TrHtjeTaqhpfS5PrPofg+E97L3jMe7JvI9wwHlSO2qe8B+GfrSf0rPyVEgH7gP8gm/DN6suCcw//TdOKyGDnLerOjjZB41Dol8ef0AzC3FxDi5hJfa844f1pwKKlCMcAFquAA1XIAaLkANF6CGC1DDBajhAtTc8wIeuAaJnvHQE/Y0IAAAAABJRU5ErkJggg==" InformativeScreenshot="df64131d184fe06b7e4038b34eeb737e.jpg" Reference="ewEyXv-L90KY8Ws8LpXXhQ/mEV_35zhukKsqcJr4dsPMg" Selector="&lt;html app='msedge.exe' title='Online CFD Trading | Trading the Markets | Plus500' /&gt;" Title="Online CFD Trading | Trading the Markets | Plus500" Url="[in_Plus500URL]" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+  </Sequence>
+</Activity>

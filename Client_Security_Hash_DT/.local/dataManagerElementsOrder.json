@@ -25,7 +25,7 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [
-        "in_SHA1Online_URL",
+        "in_SHA1Url",
         "in_HashFormula",
         "out_HashResult"
       ],
@@ -131,6 +131,88 @@
         "in_Status",
         "in_System1_URL",
         "in_WIID"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SHA1Online/SHA1Online_Open.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_SHA1Url"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SHA1Online/SHA1Online_Close.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_SHA1Url"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "System1/System1_Login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "username&Sequence_1",
+        "password&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_System1Url",
+        "in_System1Credential",
+        "out_LoginStatus"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "System1/System1_Close.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "System1_URL&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "System1/System1_ExtractClientInformation.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strClientInformation&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_ClientID",
+        "out_ClientName",
+        "out_ClientCountry",
+        "in_System1_URL",
+        "in_WIID"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "System1/System1_ExtractWIsDataTable.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_ExtractDataTable"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "System1/System1_NavigateTo_WIDetails.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_WIID",
+        "in_System1_URL"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
