@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="751.2,1352.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="751.2,1428.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -107,7 +107,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="595.2,1288" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Process Description: Extracting High and Low stock price values NZDUSD and AUDUSD from Plus500 website&#xD;&#xA;Applications Used: MicrosoftEdge, Google Chrome&#xD;&#xA;" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="595.2,1364" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strHighNZD" />
       <Variable x:TypeArguments="x:String" Name="strLowNZD" />
@@ -116,17 +116,14 @@
       <Variable x:TypeArguments="x:String" Name="strNZDAverage" />
       <Variable x:TypeArguments="x:String" Name="strAUDAverage" />
       <Variable x:TypeArguments="x:String" Default="https://www.plus500.com/en-NZ/" Name="strPlus500URL" />
-      <Variable x:TypeArguments="x:String" Name="strFinalHTMLFileLocation">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\Users\vishn\OneDrive\Desktop\Plus500_CaptureStockValues_Assignment2</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="C:\Users\vishn\OneDrive\Desktop\Plus500_CaptureStockValues_Assignment2" Name="strFinalHTMLFileLocation" />
       <Variable x:TypeArguments="x:String" Name="strFinalHTMLTemplate" />
       <Variable x:TypeArguments="x:String" Name="strHTMLTemplate" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="532.8,1176" sap2010:WorkflowViewState.IdRef="TryCatch_1">
@@ -135,6 +132,7 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Plus500_NavigatingToHomePage.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Plus500_NavigatingToHomePage.xaml">
@@ -148,7 +146,7 @@
               <OutArgument x:TypeArguments="x:String" x:Key="out_AUDAverage">[strAUDAverage]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:ReadTextFile File="{x:Null}" Content="[strHTMLTemplate]" DisplayName="Read Text File" FileName="Template.html" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+          <ui:ReadTextFile File="{x:Null}" Content="[strHTMLTemplate]" DisplayName="Read Text File HTML Template" FileName="Template.html" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
           <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strFinalHTMLTemplate]</OutArgument>
@@ -159,7 +157,7 @@
           </Assign>
           <ui:CreateFile ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create File" sap:VirtualizedContainerService.HintSize="433.6,134.4" sap2010:WorkflowViewState.IdRef="CreateFile_1" Name="FinalHTML.html" Path="[strFinalHTMLFileLocation]" />
           <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="FinalHTML.html" sap:VirtualizedContainerService.HintSize="433.6,134.4" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[strFinalHTMLTemplate]" UseDefaultEncoding="False" />
-          <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="file:///C:/Users/vishn/OneDrive/Desktop/Plus500_CaptureStockValues_Assignment2/FinalHTML.html" sap:VirtualizedContainerService.HintSize="433.6,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+          <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process To Open Final HTML Page" FileName="file:///C:/Users/vishn/OneDrive/Desktop/Plus500_CaptureStockValues_Assignment2/FinalHTML.html" sap:VirtualizedContainerService.HintSize="433.6,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
